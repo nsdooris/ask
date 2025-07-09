@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Консервативный инвестор</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --conservative-bg: #9d7cfb;
+            --conservative-btn-bg: #fff;
+            --conservative-btn-text: #181818;
+        }
+        .result-conservative {
+            background: var(--conservative-bg);
+            min-height: 100vh;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0;
+        }
+        .result-conservative__header {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 24px;
+            font-size: 18px;
+        }
+        .result-conservative__close {
+            font-size: 36px;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .result-conservative__main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0 24px;
+        }
+        .result-conservative__title {
+            font-size: 36px;
+            font-weight: 700;
+            margin: 40px 0 16px 0;
+            text-align: center;
+        }
+        .result-conservative__desc {
+            font-size: 20px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .result-conservative__img {
+            width: 220px;
+            margin-bottom: 5%;
+        }
+        .result-conservative__btn {
+            background: var(--conservative-btn-bg);
+            color: var(--conservative-btn-text);
+            border: none;
+            border-radius: 20px;
+            font-size: 20px;
+            font-weight: 500;
+            padding: 20px 0;
+            width: 90%;
+            margin: 0 auto 40px auto;
+            display: block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="result-conservative">
+    <header class="result-conservative__header">
+        <button class="result-conservative__close" aria-label="Закрыть">&times;</button>
+    </header>
+    <main class="result-conservative__main">
+        <h1 class="result-conservative__title">Консервативный инвестор</h1>
+        <div class="result-conservative__desc">Вы цените стабильность и безопасность.<br>Вам подходят: облигации, депозиты</div>
+        <img src="assets/trophy_conservative.png" alt="Кубок" class="result-conservative__img">
+        <button class="result-conservative__btn">Смотреть надежные варианты</button>
+    </main>
+</body>
+</html> 

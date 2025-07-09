@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Агрессивный инвестор</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        :root {
+            --aggressive-bg: #ff6a1a;
+            --aggressive-btn-bg: #fff;
+            --aggressive-btn-text: #181818;
+        }
+        .result-aggressive {
+            background: var(--aggressive-bg);
+            min-height: 100vh;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 0;
+        }
+        .result-aggressive__header {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 24px;
+            font-size: 18px;
+        }
+        .result-aggressive__close {
+            font-size: 36px;
+            color: #fff;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .result-aggressive__main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 0 24px;
+        }
+        .result-aggressive__title {
+            font-size: 36px;
+            font-weight: 700;
+            margin: 40px 0 16px 0;
+            text-align: center;
+        }
+        .result-aggressive__desc {
+            font-size: 20px;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+        .result-aggressive__img {
+            width: 220px;
+            margin-bottom: 5%;
+        }
+        .result-aggressive__btn {
+            background: var(--aggressive-btn-bg);
+            color: var(--aggressive-btn-text);
+            border: none;
+            border-radius: 20px;
+            font-size: 20px;
+            font-weight: 500;
+            padding: 20px 0;
+            width: 90%;
+            margin: 0 auto 40px auto;
+            display: block;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="result-aggressive">
+    <header class="result-aggressive__header">
+        <button class="result-aggressive__close" aria-label="Закрыть">&times;</button>
+    </header>
+    <main class="result-aggressive__main">
+        <h1 class="result-aggressive__title">Агрессивный инвестор</h1>
+        <div class="result-aggressive__desc">Вы готовы рисковать ради высокой доходности.<br>Вам подходят: акции роста, криптовалюта, венчурные инвестиции</div>
+        <img src="assets/crown.png" alt="Корона" class="result-aggressive__img">
+        <button class="result-aggressive__btn">Купить акции с высоким потенциалом</button>
+    </main>
+</body>
+</html> 
