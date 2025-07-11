@@ -98,6 +98,22 @@ modalOpts && modalOpts.addEventListener('change', e => {
         nextBtn.disabled = false;
     }
 });
+function sendToGoogleSheet(answers, type) {
+    fetch('https://script.google.com/macros/s/AKfycbzunlYjn9hkN2P5u-wF2CJXMMdyZ6bKJbD-FXe0Rbg0rAELO1-pspEafru-H7l3bp5PKw/exec', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ answers, type })
+        /*body: JSON.stringify({id:'202021',date: "2024-08-21 15:51:37",
+            vari:'var3',answer1:'1', answer2:'1',
+            answer3:'1',answer4:'1',answer5:'1',result:'Агрессивный'}),  
+            
+}).then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error!', error.message));
+*/
+    });
+}
 nextBtn.onclick = function() {
     if(answers[current]===-1) return;
     if(current<questions.length-1) {
@@ -121,6 +137,8 @@ nextBtn.onclick = function() {
                 winner = 1;
             }
         }
+        let typeStr = winner === 0 ? 'Консервативный' : winner === 1 ? 'Умеренный' : 'Агрессивный';
+        sendToGoogleSheet(answers, typeStr);
         if(winner===0){
             window.location.href = 'conservative.html';
         } else if(winner===1){
@@ -134,7 +152,37 @@ document.getElementById('investor-start-btn').onclick = function() {
     current = 0;
     answers = Array(questions.length).fill(-1);
     showModal(0);
+    //console.log(gtag);
+    gtag('event', '9999_start_var1');
+    
 };
 </script>
+ <!-- Google tag (gtag.js) -->
+ <script async src="https://www.googletagmanager.com/gtag/js?id=G-98GT8FHBZK"></script>
+ <script>
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+ 
+   gtag('config', 'G-98GT8FHBZK');
+ </script>
+ <!-- Yandex.Metrika counter -->
+ <script type="text/javascript" >
+     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+     m[i].l=1*new Date();
+     for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+     k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+  
+     ym(96171108, "init", {
+          clickmap:true,
+          trackLinks:true,
+          accurateTrackBounce:true,
+          webvisor:true,
+          ecommerce:"dataLayer"
+     });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/96171108" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
 </body>
 </html> 
